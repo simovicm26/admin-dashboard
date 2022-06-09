@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+:root{
+    --large-font: 40px;
+    --medium-font: 20px;
+    --large-medium-font:30px;
+    --zinc-grey:#fef2f2;
+    --soft-red:#ef4444;
+
+
+}
+
+.container{ 
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar mainContent";
+}
+
+.sidebar{
+    margin: 0;
+    color:white; 
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right:20px;
+    background-color: var(--soft-red);
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows:100px 350px 350px;
+    justify-items: flex-start;
+    align-items: flex-start;
+    font-size:var(--medium-font);
+}
+
+.sidebar p{
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul{
+    padding: 0;
+    margin:0;
+    display: grid;
+    gap:20px;
+}
+
+.logo{
+    font-size: var(--large-font);
+}
+
+.header{
+    font-size: var(--medium-font);
+    background-color:white;
+    grid-area: header;
+    padding: 0 50px;
+    display: grid;
+    gap:20px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons div{
+    background-color: var(--soft-red);
+    color:white;
+    padding: 0.5vw 1.5vw;
+    border-radius: 20px;
+    margin:0 10px;
+}
+
+.header span{
+    font-size: var(--large-medium-font);
+}
+
+.profile-container{
+    display:flex;
+    align-items: center;
+    justify-self:flex-end;
+    gap:30px;
+}
+
+.search-bar{
+    background-color: var(--zinc-grey);
+    height: 40px;
+    border-radius: 20px;
+    padding:10px;
+
+}
+
+.main-content{
+    background-color:var(--zinc-grey);
+    grid-area: mainContent;
+    padding:50px;
+    display: grid;
+    column-gap:50px;   
+    grid-template-columns: 3fr minmax(270px,1fr);
+    grid-template-rows: 550px 550px;
+    grid-template-areas:
+    "projects announcements"
+    "projects trending"
+}
+
+.projects{
+    grid-area: projects;
+}
+
+.projects>p,.announcements>p,.trending>p{
+    font-size: 30px;
+}
+.projects-container{
+    display: grid;
+    gap:20px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.project-card{
+    background-color: azure;
+    font-weight: 300;
+    padding:20px;
+    border-radius: 10px;
+    border-left: 10px solid var(--soft-red);
+}
+
+.announcements{
+    grid-area:announcements;
+}
+
+.announcements-container,.trending-container{
+    background-color: azure;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.announcements-container h3{
+    font-size: 16px;
+    padding:10px 0;
+}
+
+.announcements-container p{
+    font-size:14px;
+    font-weight: 300;
+    margin:0;
+}
+
+.trending{
+    grid-area: trending;
+}
+
+h3{
+    font-size: var(--medium-font);
+    font-weight: 500;
+    margin:0;
+    padding:0;
+}
+
+hr{
+    border:1px solid var(--soft-red);
+}
+
+.image{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: var(--soft-red);
+    margin:20px;
+}
+
+.account{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.account p{
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+.account h3{
+    margin:5px 0;
+    padding:0;
+    font-weight: 400;
+}
